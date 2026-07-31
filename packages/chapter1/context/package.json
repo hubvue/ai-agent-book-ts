@@ -1,0 +1,48 @@
+{
+  "name": "@ai-agent-book/chapter1-context",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Context-aware agent and five-arm context ablation experiment",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./experiment": {
+      "types": "./dist/experiment.d.ts",
+      "import": "./dist/experiment.js"
+    }
+  },
+  "bin": {
+    "context-agent": "./dist/cli.js",
+    "context-experiment-1-1": "./dist/experiment.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node --eval \"import('node:fs/promises').then(({rm}) => rm('dist', {recursive:true, force:true}))\"",
+    "experiment": "tsx src/experiment.ts",
+    "start": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "dotenv": "^17.2.3",
+    "openai": "^6.16.0",
+    "pdfjs-dist": "^5.4.624",
+    "pdfkit": "^0.17.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/pdfkit": "^0.17.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.env
+.codebase-memory
+results/
+packages/chapter1/context/ablation_results.json
+packages/chapter1/context/ablation_study_results.svg
+packages/chapter1/context/task_result_*.json
