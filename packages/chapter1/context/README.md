@@ -1,5 +1,7 @@
 # Chapter 1 — Context
 
+[English](README.en.md) | 简体中文
+
 《AI Agent》第一章“上下文的关键作用”示例的 TypeScript 实现。本包提供一个带工具调用能力的上下文感知 Agent，并通过五组消融模式观察对话历史、推理内容、工具定义和工具结果对任务执行的影响。
 
 > English summary: this package is the TypeScript migration of the Chapter 1 context-aware agent and five-arm ablation experiment. It requires Node.js 24+, uses pnpm, supports OpenAI-compatible providers, and includes local tests plus preserved real-API evidence from the Python implementation.
@@ -613,6 +615,7 @@ packages/chapter1/context/
 │   └── python-baseline/
 ├── package.json
 ├── README.md
+├── README.en.md
 └── tsconfig.json
 ```
 

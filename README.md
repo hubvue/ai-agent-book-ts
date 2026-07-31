@@ -1,5 +1,7 @@
 # AI Agent-TypeScript
 
+[English](README.en.md) | 简体中文
+
 [《AI Agent》](https://github.com/bojieli/ai-agent-book)配套示例的 TypeScript monorepo。项目使用 pnpm workspace 管理各章节包，要求 Node.js 24 或更高版本。
 
 ## 当前迁移内容
