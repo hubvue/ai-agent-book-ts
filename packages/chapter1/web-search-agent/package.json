@@ -1,0 +1,44 @@
+{
+  "name": "@ai-agent-book/chapter1-web-search-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kimi K3 ReAct web-search agent using Moonshot Formula tools",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./experiment": {
+      "types": "./dist/experiment.d.ts",
+      "import": "./dist/experiment.js"
+    }
+  },
+  "bin": {
+    "web-search-agent": "./dist/cli.js",
+    "web-search-experiment-1-2": "./dist/experiment.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node --eval \"import('node:fs/promises').then(({rm}) => rm('dist', {recursive:true, force:true}))\"",
+    "experiment": "tsx src/experiment.ts",
+    "start": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "openai": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

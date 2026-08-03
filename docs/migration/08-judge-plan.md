@@ -31,3 +31,14 @@
 
 - State: passing locally; limited for fresh target real-API evidence
 - Remaining blocker: only a direct provider credential for a new live run
+
+## Web Search Agent Judge
+
+- Portable checks: strict TypeScript compile, Vitest behavior contracts, CLI offline smoke, package build
+- Comparable surface: provider resolution, Formula URLs/bodies, raw arguments, ReAct trace order, failure strings, experiment 1-2 acceptance checks
+- Old baseline: source pytest files plus `chapter1/web-search-agent/validation/latest.json` (`acceptance.passed: true`)
+- Baseline limitation: source pytest could not run in the current environment because `pytest` is not installed
+- Safe negative control: an otherwise valid experiment payload with both web searches in one iteration must fail `sequential_search_rounds_observed`
+- Cost placement: focused Vitest per unit; package test/typecheck/build per batch; live Formula experiment only with a direct Moonshot credential
+- State: passing locally; 37/37 web-search checks pass and the preserved Python real evidence passes the migrated Judge
+- Remaining limitation: a fresh TypeScript real-API run still requires a direct Moonshot credential

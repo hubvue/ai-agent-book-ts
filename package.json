@@ -12,7 +12,12 @@
     "build": "pnpm -r build",
     "clean": "pnpm -r clean",
     "start:context": "pnpm --filter @ai-agent-book/chapter1-context start",
+    "start:web-search": "pnpm --filter @ai-agent-book/chapter1-web-search-agent start",
+    "experiment:web-search": "pnpm --filter @ai-agent-book/chapter1-web-search-agent experiment",
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
   }
 }

@@ -1,52 +1,53 @@
-# Context Migration Status
+# Chapter 1 Migration Status
 
 ## Current Status
 
 - Current phase: verify / cleanup
-- Phase goal: prove the TypeScript package preserves the observable context-ablation behavior
+- Phase goal: prove the TypeScript Context and Web Search Agent packages preserve their observable experiment behavior
 - Migration posture: structure-preserving, with language-specific adapters
-- Inputs: Python `chapter1/context`, shared `agentbook.providers`, Python tests, real API evidence from 2026-07-29
-- Key assumptions: API credentials are not required for local acceptance; a new TypeScript real-API evidence run is an explicit follow-up
-- Confirmed facts: Node 24 monorepo builds; 31 local tests pass; the TypeScript Judge accepts all five preserved Python evidence arms; root and package usage documentation are reconciled with the TypeScript implementation
-- Unknowns to verify: provider-specific live API compatibility after future SDK/provider changes
+- Inputs: Python `chapter1/context`, Python `chapter1/web-search-agent`, shared provider rules, source tests and preserved real API evidence
+- Key assumptions: local acceptance does not require credentials; fresh target real-API evidence is an explicit follow-up
+- Confirmed facts: Node 24 pnpm workspace builds; 68 local tests pass; both preserved Python evidence sets pass the target Judges; bilingual package/root docs cover the migrated surfaces
+- Unknowns to verify: provider-specific live compatibility after future SDK, Formula, or model changes
 
 ## Loop State
 
-- Judge state: passing for portable behavior and preserved real evidence; limited for a fresh target real-API run
-- Rulebook revision: 1.1
-- Queue summary: 6 done
-- Current operation / result ID: `verify-2026-07-31-local-01`
-- Parity summary: 31/31 local checks passed; 5/5 Python real-API arms accepted
+- Judge state: passing for portable behavior and preserved real evidence; limited only for fresh target live runs
+- Rulebook revision: 1.2
+- Queue summary: 13 done
+- Current operation / result ID: `web-search-verify-2026-07-31-local-01`
+- Parity summary: 68/68 workspace checks passed; Context 5/5 evidence arms and Web Search Experiment 1-2 baseline accepted
 - Systemic issues / affected rules: none
 
 ## Phase Results
 
-| Phase | Output | Status |
+| Boundary | Output | Status |
 |---|---|---|
-| intake | `00-context.md` | complete |
-| audit / map | `01-project-overview.md`, `05-system-map.md` | complete |
-| diff / plan | `07-diff-matrix.md`, `07-rulebook.md`, `08-judge-plan.md` | complete |
-| pilot / execute | `09-module-batches.md`, `14-execution-log.md` | complete |
-| verify | `16-verification-checklist.md` | complete with one explicit live-API follow-up |
-| cleanup | `17-cleanup-plan.md` | complete |
-| documentation | root `README.md`, package `README.md` | complete |
+| Chapter 1 Context | `packages/chapter1/context` | complete |
+| Chapter 1 Web Search Agent | `packages/chapter1/web-search-agent` | complete |
+| intake / audit / map | context, overview and system-map artifacts | complete |
+| diff / plan | diff matrix, Rulebook 1.2, Judge and durable queue | complete |
+| execute | U-001..U-013 outputs and execution log | complete |
+| verify | local tests, typecheck/build, CLI smoke and preserved evidence replay | complete with live-API follow-ups |
+| cleanup / documentation | cleanup plan and bilingual root/package guides | complete |
 
 ## Risks
 
-- A fresh TypeScript real-API run was not performed because no provider credential was supplied for migration verification.
-- `code_interpreter` intentionally executes JavaScript rather than Python.
-- Provider model ids and custom request fields can change outside this repository.
+- Fresh TypeScript real-API runs were not performed because no direct provider credential was supplied.
+- Kimi Formula availability, provider model ids and custom fields can change outside this repository.
+- Source web-search pytest could not run in the current Python environment because `pytest` is not installed; source tests were ported and successful real evidence was replayed.
+- The development `tsx` CLI cannot open its IPC socket inside the current sandbox; the compiled Node CLI passed help and offline end-to-end smoke checks.
 
 ## Exit Criteria
 
-- [x] Node version policy is `>=24`
-- [x] pnpm workspace and lockfile exist
-- [x] Context Agent, tools, provider resolution, CLI and experiment runner are implemented in TypeScript
-- [x] Portable characterization tests pass
-- [x] Preserved Python real-API evidence passes the migrated Judge
+- [x] Node version policy is `>=24` and the pnpm lockfile includes both packages
+- [x] Context Agent, Web Search Agent, CLIs and strict experiment runners are implemented in TypeScript
+- [x] Formula declaration/Fiber protocol, raw arguments and credential-free evidence are preserved
+- [x] Portable characterization tests pass with no network or credentials
+- [x] Preserved Python real-API evidence passes the migrated Judges
 - [x] Independent review findings are resolved
-- [x] Root navigation and package-level usage documentation cover the migrated surface
+- [x] Root navigation and package-level usage documentation cover both migrated packages
 
 ## Next Step
 
-- Recommended next phase: run `pnpm --filter @ai-agent-book/chapter1-context experiment -- --provider <provider> --model <model>` with a direct provider credential when fresh TypeScript real-API evidence is desired.
+- Recommended next phase: with a direct Moonshot credential, run `pnpm experiment:web-search` to generate fresh TypeScript Experiment 1-2 evidence. This is optional for the completed local migration and required before making new live-provider claims.

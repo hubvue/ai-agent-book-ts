@@ -9,6 +9,7 @@
 | 章节 | 包 | 状态 | 文档 |
 |---|---|---|---|
 | Chapter 1 — Context | `@ai-agent-book/chapter1-context` | 已迁移并通过本地验证 | [完整使用手册](packages/chapter1/context/README.md) |
+| Chapter 1 — Web Search Agent | `@ai-agent-book/chapter1-web-search-agent` | 已迁移并通过本地验证 | [完整使用手册](packages/chapter1/web-search-agent/README.md) |
 
 Chapter 1 Context 包包含：
 
@@ -21,6 +22,8 @@ Chapter 1 Context 包包含：
 - 从 Python 版本保留的真实 API 基线证据。
 
 功能、配置、CLI 参数、编程接口、实验输出和已知限制请阅读 [Chapter 1 Context README](packages/chapter1/context/README.md)。
+
+Chapter 1 Web Search Agent 包保留 Kimi K3 + Moonshot Formula 的多轮 ReAct 搜索协议、离线轨迹演示、高级批量/上下文/比较/事实核查接口，以及实验 1-2 的严格证据 Judge。详情见 [Web Search Agent README](packages/chapter1/web-search-agent/README.md)。
 
 ## 环境要求
 
@@ -44,6 +47,9 @@ pnpm test
 
 # 启动 Chapter 1 Context 交互式 CLI
 pnpm start:context
+
+# 启动 Chapter 1 Web Search Agent
+pnpm start:web-search
 
 # 查看 Context CLI 帮助
 pnpm --filter @ai-agent-book/chapter1-context start --help
@@ -76,7 +82,8 @@ ai-agent-book-ts/
 │   └── migration/              # 迁移规则、执行日志与验证记录
 ├── packages/
 │   └── chapter1/
-│       └── context/            # Chapter 1 Context TypeScript 包
+│       ├── context/            # Chapter 1 Context TypeScript 包
+│       └── web-search-agent/   # Chapter 1 Kimi Web Search Agent
 ├── package.json
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml

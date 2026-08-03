@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      '@types/node':
+        specifier: ^24.10.1
+        version: 24.13.3
 
   packages/chapter1/context:
     dependencies:
@@ -32,6 +36,28 @@ importers:
       '@types/pdfkit':
         specifier: ^0.17.5
         version: 0.17.6
+      tsx:
+        specifier: ^4.21.0
+        version: 4.23.1
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^4.0.18
+        version: 4.1.10(@types/node@24.13.3)(vite@8.2.0(@types/node@24.13.3)(esbuild@0.28.1)(tsx@4.23.1))
+
+  packages/chapter1/web-search-agent:
+    dependencies:
+      dotenv:
+        specifier: ^17.2.3
+        version: 17.4.2
+      openai:
+        specifier: ^6.16.0
+        version: 6.49.0
+    devDependencies:
+      '@types/node':
+        specifier: ^24.10.1
+        version: 24.13.3
       tsx:
         specifier: ^4.21.0
         version: 4.23.1

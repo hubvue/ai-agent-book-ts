@@ -9,6 +9,7 @@ A TypeScript monorepo containing companion examples for [*AI Agent*](https://git
 | Chapter | Package | Status | Documentation |
 |---|---|---|---|
 | Chapter 1 — Context | `@ai-agent-book/chapter1-context` | Migrated and locally verified | [Complete usage guide](packages/chapter1/context/README.en.md) |
+| Chapter 1 — Web Search Agent | `@ai-agent-book/chapter1-web-search-agent` | Migrated and locally verified | [Complete usage guide](packages/chapter1/web-search-agent/README.en.md) |
 
 The Chapter 1 Context package includes:
 
@@ -21,6 +22,8 @@ The Chapter 1 Context package includes:
 - Preserved real-API baseline evidence from the Python implementation.
 
 For capabilities, configuration, CLI options, programmatic APIs, experiment outputs, and known limitations, see the [Chapter 1 Context README](packages/chapter1/context/README.en.md).
+
+The Chapter 1 Web Search Agent preserves the Kimi K3 + Moonshot Formula multi-round ReAct protocol, a credential-free offline trace, advanced batch/context/comparison/fact-check helpers, and the strict Experiment 1-2 evidence Judge. See its [usage guide](packages/chapter1/web-search-agent/README.en.md).
 
 ## Requirements
 
@@ -44,6 +47,9 @@ pnpm test
 
 # Start the Chapter 1 Context interactive CLI
 pnpm start:context
+
+# Start the Chapter 1 Web Search Agent
+pnpm start:web-search
 
 # Show Context CLI help
 pnpm --filter @ai-agent-book/chapter1-context start --help
@@ -76,7 +82,8 @@ ai-agent-book-ts/
 │   └── migration/              # Migration rules, logs, and verification records
 ├── packages/
 │   └── chapter1/
-│       └── context/            # Chapter 1 Context TypeScript package
+│       ├── context/            # Chapter 1 Context TypeScript package
+│       └── web-search-agent/   # Chapter 1 Kimi Web Search Agent
 ├── package.json
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
